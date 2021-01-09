@@ -15,7 +15,8 @@ steps:
     versionSpec: '3.6'
     addToPath: true
     architecture: 'x64'
-- script: echo Hello, world!
+
+- script: ls -lrt
   displayName: 'Run a one-line script'
 
 - script: |
