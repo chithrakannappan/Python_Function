@@ -25,9 +25,9 @@ steps:
     organization: 'raghuram-test'
     scannerMode: 'CLI'
     configMode: 'manual'
-    cliProjectKey: 'raghuram-test'
+    cliProjectKey: 'HelloWorld-Func'
     cliProjectName: 'HelloWorld-Func'
-    cliSources: '$(System.DefaultWorkingDirectory)/HelloWorld'
+    cliSources: '.'
     extraProperties: |
       # Additional properties that will be passed to the scanner, 
       # Put one key=value per line, example:
