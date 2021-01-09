@@ -27,11 +27,11 @@ steps:
     configMode: 'manual'
     cliProjectKey: 'raghuram-test'
     cliProjectName: 'HelloWorld-Func'
-    cliSources: './HelloWorld'
+    cliSources: '$(System.DefaultWorkingDirectory)/HelloWorld'
     extraProperties: |
       # Additional properties that will be passed to the scanner, 
       # Put one key=value per line, example:
-      sonar.exclusions=**/*.json
+      #sonar.exclusions=**/*.json
 
 - task: SonarCloudAnalyze@1
 
