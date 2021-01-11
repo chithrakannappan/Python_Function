@@ -6,6 +6,9 @@
 trigger:
 - main
 
+variables:
+  function_app_name: 'HelloApp'
+
 pool:
   vmImage: 'ubuntu-latest'
 
@@ -41,14 +44,13 @@ steps:
 
 - task: ArchiveFiles@2
   inputs:
-    rootFolderOrFile: '$(System.DefaultWorkingDirectory)/HelloWorld'
-    includeRootFolder: false
+    rootFolderOrFile: "$(System.DefaultWorkingDirectory)/$(function_app_name)"
+    includeRootFolder: true
     archiveType: 'zip'
-    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+    archiveFile: "$(System.DefaultWorkingDirectory)/build$(Build.BuildId).zip"
     replaceExistingArchive: true
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
-    ArtifactName: 'Helloworld-Func'
-    publishLocation: 'Container'
+    PathtoPublish: "$(System.DefaultWorkingDirectory)/build$(Build.BuildId).zip"
+    ArtifactName: $(function_app_name)
 
