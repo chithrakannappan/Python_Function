@@ -20,7 +20,7 @@ steps:
     architecture: 'x64'
 
 - script: ls -lrt
-  displayName: 'Run a one-line script'
+  displayName: 'Run a single-line script'
 
 - task: ArchiveFiles@2
   inputs:
